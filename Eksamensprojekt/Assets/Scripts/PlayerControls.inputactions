@@ -116,7 +116,7 @@
                 {
                     "name": "",
                     "id": "7d5d3be8-a323-4948-a509-6ccd88fea535",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard2;Keyboard",
