@@ -44,7 +44,7 @@
             ],
             "bindings": [
                 {
-                    "name": "2D Vector",
+                    "name": "Player1",
                     "id": "5a69700c-8d45-4fee-96ce-d009ad6e4310",
                     "path": "2DVector",
                     "interactions": "",
@@ -68,7 +68,7 @@
                 {
                     "name": "left",
                     "id": "da3833ce-87f6-4eff-8b1d-2553c14eea10",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -79,7 +79,7 @@
                 {
                     "name": "right",
                     "id": "2840031a-f8bb-445e-a7b8-e6d4af57d2f3",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -88,7 +88,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "2D Vector",
+                    "name": "Player2",
                     "id": "38ecc0d5-c5e1-45b2-9f73-5bf48c53e398",
                     "path": "2DVector",
                     "interactions": "",
