@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float jumpHeight = 1.0f;
     [SerializeField]
-    private float gravityValue = -9.81f; 
+    private float gravityValue = -9.82f; 
     
     private CharacterController controller;
     private Vector3 playerVelocity;
@@ -29,19 +29,19 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnJump(InputAction.CallbackContext context) {
-        jumped = context.ReadValue<bool>();
         jumped = context.action.triggered;
     }
 
     void Update()
     {
         groundedPlayer = controller.isGrounded;
+        print(groundedPlayer);
         if (groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
         }
 
-        Vector3 move = new Vector3(movementInput.x, 0, movementInput.y);
+        Vector3 move = new Vector3(movementInput.x, 0, 0);
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         if (move != Vector3.zero)

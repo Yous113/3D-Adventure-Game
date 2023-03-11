@@ -68,7 +68,7 @@
                 {
                     "name": "left",
                     "id": "da3833ce-87f6-4eff-8b1d-2553c14eea10",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -79,7 +79,7 @@
                 {
                     "name": "right",
                     "id": "2840031a-f8bb-445e-a7b8-e6d4af57d2f3",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -133,6 +133,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f87ee312-8cea-48aa-a3c0-d160edf12377",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7d5d3be8-a323-4948-a509-6ccd88fea535",
                     "path": "<Keyboard>/w",
                     "interactions": "",
@@ -144,11 +155,11 @@
                 },
                 {
                     "name": "",
-                    "id": "ec5eaee3-8f67-4ca1-bbb4-1fdd793c4082",
-                    "path": "<Keyboard>/upArrow",
+                    "id": "77e33939-df00-46ff-bada-a7a22b8e91b6",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard2",
+                    "groups": "Controller",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -196,6 +207,17 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Controller",
+            "bindingGroup": "Controller",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
                     "isOptional": false,
                     "isOR": false
                 }
