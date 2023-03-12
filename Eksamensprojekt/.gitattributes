@@ -1,0 +1,4 @@
+* text=auto
+
+*.meta text eol=lf
+*.unity text eol=lf
