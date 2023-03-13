@@ -1,22 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class Interaction : MonoBehaviour
 {
     [SerializeField] private GameObject shopUI;
     [SerializeField] private Inventory inventory;
-    bool interacted;
+    bool interacted = false;
+    bool opened = false;
     
     public void OnInteract(InputAction.CallbackContext context)
     {
-        interacted = context.action.triggered;  
+        interacted = context.action.IsPressed();
+
+        //if (!context.action.IsPressed())
+        //{
+          //  interacted = false;
+        //}
+        //else
+        //{
+         //   interacted = true;
+        //}
     }
     
     private void OnTriggerStay(Collider other) {
         if (interacted && other.gameObject.tag == "Shop")
         {
-            shopUI.SetActive(true);
+            Shop();
         }
     }
 
@@ -34,5 +42,23 @@ public class Interaction : MonoBehaviour
             Destroy(other.gameObject);
         }
         
+    }
+
+    void Shop()
+    {
+        if (!opened)
+        {
+            shopUI.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            opened = true;
+        }
+        else
+        {
+            shopUI.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            opened = false;
+        }
     }
 }
