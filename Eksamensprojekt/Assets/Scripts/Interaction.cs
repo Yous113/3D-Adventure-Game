@@ -32,13 +32,14 @@ public class Interaction : MonoBehaviour
     {
         if (other.gameObject.tag == "Stick")
         {
-            inventory.additem(inventory.sticks);
+            inventory.additem("Sticks", inventory.sticks);
             Destroy(other.gameObject);
+
         }
         
         if (other.gameObject.tag == "Gem")
         {
-            inventory.additem(inventory.gem);
+            inventory.additem("Gem", inventory.gem);
             Destroy(other.gameObject);
         }
         
