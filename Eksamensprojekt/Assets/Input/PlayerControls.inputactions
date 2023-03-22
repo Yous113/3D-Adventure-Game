@@ -47,6 +47,15 @@
                     "id": "85913da0-5dc3-4ad5-b4bc-d54661c5e378",
                     "expectedControlType": "Button",
                     "processors": "",
+                    "interactions": "Tap",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CloseTap",
+                    "type": "Button",
+                    "id": "2076dc8a-76f7-4e4d-91dc-b48aa691c1cd",
+                    "expectedControlType": "Button",
+                    "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 }
@@ -258,6 +267,28 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41d6b36c-2a6b-413b-a9da-934e97e9b2c5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "CloseTap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "26cecdaa-373f-43fd-9137-9a3f1011141d",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "CloseTap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

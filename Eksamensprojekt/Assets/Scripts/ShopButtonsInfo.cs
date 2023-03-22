@@ -12,8 +12,9 @@ public class ShopButtonsInfo : MonoBehaviour
     public GameObject ShopManager;
     
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
         sticksNeeded.text = ShopManager.GetComponent<ShopManagerScript>().shopItems[2, itemID].ToString();
+        gemsNeeded.text = ShopManager.GetComponent<ShopManagerScript>().shopItems[3, itemID].ToString();
     }
 }

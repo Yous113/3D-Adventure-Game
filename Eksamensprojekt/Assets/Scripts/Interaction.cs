@@ -6,25 +6,29 @@ public class Interaction : MonoBehaviour
     [SerializeField] private Inventory inventory;
     bool interacted = false;
     bool opened = false;
+    bool inShop = false;
     
     public void OnInteract(InputAction.CallbackContext context)
     {
         interacted = context.action.IsPressed();
-
-        //if (!context.action.IsPressed())
-        //{
-          //  interacted = false;
-        //}
-        //else
-        //{
-         //   interacted = true;
-        //}
     }
-    
+
+    public void OnCloseTap(InputAction.CallbackContext context)
+    {
+        if (opened = true) 
+        {
+            shopUI.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            opened = false;
+        }
+    }
+
     private void OnTriggerStay(Collider other) {
         if (interacted && other.gameObject.tag == "Shop")
         {
             Shop();
+            
         }
     }
 
@@ -39,7 +43,7 @@ public class Interaction : MonoBehaviour
         
         if (other.gameObject.tag == "Gem")
         {
-            inventory.additem("Gem", inventory.gem);
+            inventory.additem("Gem", inventory.gems);
             Destroy(other.gameObject);
         }
         
@@ -53,13 +57,6 @@ public class Interaction : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             opened = true;
-        }
-        else
-        {
-            shopUI.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            opened = false;
         }
     }
 }
