@@ -9,7 +9,7 @@ public class AttackScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.V))
         {
             Attack();
             slash.Play();
