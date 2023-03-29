@@ -1,21 +1,23 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 public class Interaction : MonoBehaviour
 {
     [SerializeField] private GameObject shopUI;
     [SerializeField] private Inventory inventory;
     bool interacted = false;
     bool opened = false;
-    bool inShop = false;
-    
+
     public void OnInteract(InputAction.CallbackContext context)
     {
         interacted = context.action.IsPressed();
+        print("True");
     }
 
     public void OnCloseTap(InputAction.CallbackContext context)
     {
-        if (opened = true) 
+        if (opened == true) 
         {
             shopUI.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
@@ -29,6 +31,10 @@ public class Interaction : MonoBehaviour
         {
             Shop();
             
+        }
+        if (interacted && other.gameObject.tag == "Boss1")
+        {
+            SceneManager.LoadScene(1);
         }
     }
 
@@ -45,8 +51,7 @@ public class Interaction : MonoBehaviour
         {
             inventory.additem("Gem", inventory.gems);
             Destroy(other.gameObject);
-        }
-        
+        } 
     }
 
     void Shop()

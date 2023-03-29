@@ -1,11 +1,31 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Defend : MonoBehaviour
 {
     private CharacterController controller;
     public bool shieldactive = false;
+    private bool defending;
+    [SerializeField]
+    private PlayerController movementScript;
 
-    void Update()
+    public void OnDefend(InputAction.CallbackContext context)
+    {
+        defending = context.action.IsPressed();
+        if (defending == true && shieldactive == false)
+        {
+            shieldactive = true;
+            movementScript.playerSpeed = movementScript.playerSpeed/2;
+            Debug.Log("Defend button pressed");
+        } else if (defending == false)
+        {
+            movementScript.playerSpeed = movementScript.playerSpeed * 2;
+            shieldactive = false;
+            Debug.Log("Defend button released");
+        }
+    }
+
+    /* void Update()
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
@@ -17,5 +37,5 @@ public class Defend : MonoBehaviour
             shieldactive = false;
             Debug.Log("Defend button released");
         }
-    }
+    } */
 }

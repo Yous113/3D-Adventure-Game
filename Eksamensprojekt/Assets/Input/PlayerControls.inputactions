@@ -232,7 +232,7 @@
                     "path": "<Keyboard>/m",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard2",
+                    "groups": "Keyboard",
                     "action": "Hit",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -240,10 +240,10 @@
                 {
                     "name": "",
                     "id": "b1b9cd42-cc91-40db-9b34-6384f19c6640",
-                    "path": "<Keyboard>/v",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Controller",
                     "action": "Defend",
                     "isComposite": false,
                     "isPartOfComposite": false

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AttackScript : MonoBehaviour
 {
@@ -6,14 +7,21 @@ public class AttackScript : MonoBehaviour
     public int attackDamage = 5;
     public LayerMask enemyLayer;
     [SerializeField] private AudioSource slash;
+    private bool attacking;
 
-    private void Update()
+    public void OnAttack(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        attacking = context.action.IsPressed();
+        if (attacking == true)
         {
+            print("attack");
             Attack();
             slash.Play();
         }
+    }
+    private void Update()
+    {
+        
     }
 
     private void Attack()
