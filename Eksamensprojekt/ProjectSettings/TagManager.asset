@@ -8,6 +8,7 @@ TagManager:
   - Stick
   - Event
   - Boss1
+  - ladder
   layers:
   - Default
   - TransparentFX

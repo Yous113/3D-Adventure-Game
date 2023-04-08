@@ -63,7 +63,7 @@
             "bindings": [
                 {
                     "name": "Player1",
-                    "id": "5a69700c-8d45-4fee-96ce-d009ad6e4310",
+                    "id": "918f00be-29e6-4d6f-a7d1-3e21fa48e02a",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -73,8 +73,19 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "up",
+                    "id": "93716d12-79da-4de0-946c-f7ada3c7d3b6",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "left",
-                    "id": "da3833ce-87f6-4eff-8b1d-2553c14eea10",
+                    "id": "559682a2-f787-470e-83c8-3b541d642e38",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -85,7 +96,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "2840031a-f8bb-445e-a7b8-e6d4af57d2f3",
+                    "id": "b3193cbf-5518-437d-8e37-394a82d28de9",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",

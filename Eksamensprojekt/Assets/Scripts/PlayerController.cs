@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     
     private Vector2 movementInput = Vector2.zero;
     private bool jumped = false;
+    private bool ladder = false;
 
     private void Start()
     {
@@ -31,6 +32,9 @@ public class PlayerController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context) {
         jumped = context.action.triggered;
     }
+
+
+
 
     void Update()
     {
@@ -50,7 +54,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Changes the height position of the player..
-        if (jumped && groundedPlayer)
+        if (jumped && groundedPlayer && !ladder)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
