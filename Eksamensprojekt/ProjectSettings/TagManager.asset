@@ -9,6 +9,7 @@ TagManager:
   - Event
   - Boss1
   - ladder
+  - Gem
   layers:
   - Default
   - TransparentFX
