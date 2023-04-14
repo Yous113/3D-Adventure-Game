@@ -60,8 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("IsWalking", false);
         }
-
-        // Changes the height position of the player..
+        
         if (jumped && groundedPlayer && !ladder)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
