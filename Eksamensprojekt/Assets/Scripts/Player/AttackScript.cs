@@ -23,8 +23,8 @@ public class AttackScript : MonoBehaviour
             print("attack");
             Attack();
             // slash.Play();
-            animator.SetBool("IsHitting", true);
         }
+        animator.SetBool("IsHitting", attacking);
     }
     private void Update()
     {
