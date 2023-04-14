@@ -10,7 +10,7 @@ public class AttackScript : MonoBehaviour
     private bool attacking;
     private Animator animator;
 
-     private void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
     }

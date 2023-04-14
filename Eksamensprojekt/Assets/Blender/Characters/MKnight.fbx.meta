@@ -236,11 +236,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|MIdle (1)
-      takeName: Armature|MIdle
+      name: Armature|MWalkingWhile
+      takeName: Armature|MWalkingWhile
       internalID: 6383220282004730858
       firstFrame: 0
-      lastFrame: 140
+      lastFrame: 27
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
