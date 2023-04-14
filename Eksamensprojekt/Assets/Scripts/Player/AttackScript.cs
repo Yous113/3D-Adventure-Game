@@ -6,8 +6,14 @@ public class AttackScript : MonoBehaviour
     public float attackRange = 10f;
     public int attackDamage = 5;
     public LayerMask enemyLayer;
-    [SerializeField] private AudioSource slash;
+    // [SerializeField] private AudioSource slash;
     private bool attacking;
+    private Animator animator;
+
+     private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public void OnAttack(InputAction.CallbackContext context)
     {
@@ -16,13 +22,16 @@ public class AttackScript : MonoBehaviour
         {
             print("attack");
             Attack();
-            slash.Play();
+            // slash.Play();
+            animator.SetBool("IsHitting", true);
         }
     }
     private void Update()
     {
         
     }
+
+    
 
     private void Attack()
     {
