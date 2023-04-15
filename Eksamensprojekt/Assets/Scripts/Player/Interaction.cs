@@ -8,6 +8,8 @@ public class Interaction : MonoBehaviour
     [SerializeField] private GameObject shopUI;
     [SerializeField] private Inventory inventory;
     [SerializeField] private GameObject interactUI;
+    [SerializeField] private PlayerController playerOne;
+    [SerializeField] private PlayerController PlayerTwo;
     bool interacted = false;
     bool opened = false;
 
@@ -25,6 +27,8 @@ public class Interaction : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             opened = false;
+            playerOne.enabled = true;
+            PlayerTwo.enabled = true;
         }
     }
 
@@ -83,6 +87,8 @@ public class Interaction : MonoBehaviour
     {
         if (!opened)
         {
+            playerOne.enabled = false;
+            PlayerTwo.enabled = false;
             shopUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
