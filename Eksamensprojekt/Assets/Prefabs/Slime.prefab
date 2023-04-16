@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 3945051379384070197}
   - component: {fileID: 3945051379384070198}
   - component: {fileID: 3945051379384070195}
+  - component: {fileID: 1338535433573730258}
   - component: {fileID: 3945051379384070196}
   m_Layer: 0
   m_Name: Slime
@@ -331,6 +332,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  loot: []
+--- !u!114 &1338535433573730258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4215028962023794145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8427a1c7a4f75f245b84f3ed1e3f7f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!114 &3945051379384070196
 MonoBehaviour:
   m_ObjectHideFlags: 0

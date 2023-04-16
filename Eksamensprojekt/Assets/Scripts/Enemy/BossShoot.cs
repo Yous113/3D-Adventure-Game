@@ -20,12 +20,15 @@ public class BossShoot : MonoBehaviour
 
     private void Update()
     {
-        attackTimer -= Time.deltaTime;
-
-        if (attackTimer <= 0f)
+        if (attackInterval != float.MaxValue)
         {
-            LaunchProjectile();
-            attackTimer = attackInterval;
+            attackTimer -= Time.deltaTime;
+
+            if (attackTimer <= 0f)
+            {
+                LaunchProjectile();
+                attackTimer = attackInterval;
+            }
         }
     }
 
@@ -48,5 +51,17 @@ public class BossShoot : MonoBehaviour
 
         ProjectileBehavior projectileBehavior = projectile.GetComponent<ProjectileBehavior>();
         projectileBehavior.SetDamage(projectileDamage);
+    }
+
+    public void StartShooting()
+    {
+        attackInterval = 0.5f;
+        Debug.Log("Boss is now shooting.");
+    }
+
+    public void StopShooting()
+    {
+        attackInterval = float.MaxValue;
+        Debug.Log("Boss stopped shooting.");
     }
 }
