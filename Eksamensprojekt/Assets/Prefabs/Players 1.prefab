@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1959048510}
   m_Layer: 0
   m_Name: PlayerOne
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,6 +217,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopUI: {fileID: 0}
   inventory: {fileID: 5073929591293019069}
+  interactUI: {fileID: 0}
+  playerOne: {fileID: 1959048507}
+  PlayerTwo: {fileID: 5073929592195527885}
 --- !u!114 &1959048503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +321,7 @@ GameObject:
   - component: {fileID: 5073929592195527895}
   m_Layer: 0
   m_Name: PlayerTwo
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -370,7 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 4
-  jumpHeight: 1
+  jumpHeight: 3
   gravityValue: -9.82
 --- !u!114 &5073929592195527889
 MonoBehaviour:
@@ -393,7 +396,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5073929592195527887}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -496,7 +499,7 @@ MonoBehaviour:
     m_ActionId: 2076dc8a-76f7-4e4d-91dc-b48aa691c1cd
     m_ActionName: Player/CloseTap[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: Controller
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -514,6 +517,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopUI: {fileID: 0}
   inventory: {fileID: 5073929591293019069}
+  interactUI: {fileID: 0}
+  playerOne: {fileID: 1959048507}
+  PlayerTwo: {fileID: 5073929592195527885}
 --- !u!114 &5073929592195527888
 MonoBehaviour:
   m_ObjectHideFlags: 0

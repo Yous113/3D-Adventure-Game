@@ -13,7 +13,7 @@ public class AttackScript : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        attackDamage = PlayerPrefs.GetInt("AttackDamage", 5)
+        attackDamage = PlayerPrefs.GetInt("AttackDamage", 5);
     }
 
     public void OnAttack(InputAction.CallbackContext context)

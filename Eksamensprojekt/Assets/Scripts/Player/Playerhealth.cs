@@ -6,7 +6,7 @@ public class Playerhealth : MonoBehaviour
 
    void Start()
    {
-     health = PlayerPrefs.GetFloat("Playerhealth", 20f)
+     health = PlayerPrefs.GetFloat("Playerhealth", 20f);
    }
    
    public void TakeDamage (float amount)
