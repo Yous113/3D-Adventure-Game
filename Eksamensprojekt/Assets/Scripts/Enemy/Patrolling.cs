@@ -48,7 +48,7 @@ public class Patrolling : MonoBehaviour
             Transform targetPoint = null;
             if (currentPoint == point1)
             {
-                targetPoint = point2;
+                targetPoint = point2; 
             }
             else if (currentPoint == point2)
             {
@@ -58,6 +58,7 @@ public class Patrolling : MonoBehaviour
             if (Vector3.Distance(transform.position, targetPoint.position) < 0.1f)
             {
                 currentPoint = targetPoint;
+                transform.Rotate(0, 180, 0);
             }
 
             transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, speed * Time.deltaTime);
