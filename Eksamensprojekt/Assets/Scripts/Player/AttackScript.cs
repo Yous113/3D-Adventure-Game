@@ -13,6 +13,7 @@ public class AttackScript : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        attackDamage = PlayerPrefs.GetInt("AttackDamage", 5)
     }
 
     public void OnAttack(InputAction.CallbackContext context)
@@ -26,12 +27,6 @@ public class AttackScript : MonoBehaviour
         }
         animator.SetBool("IsHitting", attacking);
     }
-    private void Update()
-    {
-        
-    }
-
-    
 
     private void Attack()
     {
@@ -45,5 +40,11 @@ public class AttackScript : MonoBehaviour
                 enemyScript.TakeDamage(attackDamage);
             }
         }
+    }
+
+    public void UpgradeSword() 
+    {
+        attackDamage += 5;
+        PlayerPrefs.SetInt("AttackDamage", attackDamage);
     }
 }
