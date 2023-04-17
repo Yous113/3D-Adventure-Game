@@ -25,6 +25,7 @@ public class Patrolling : MonoBehaviour
 
     void Update()
     {
+
         if (Vector3.Distance(transform.position, player.position) < detectionRange)
         {
             if (IsPlayerBetweenPoints())
@@ -61,6 +62,7 @@ public class Patrolling : MonoBehaviour
 
             transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, speed * Time.deltaTime);
         }
+        
     }
 
     bool IsPlayerBetweenPoints()
