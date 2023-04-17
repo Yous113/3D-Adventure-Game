@@ -3,12 +3,15 @@ using UnityEngine.InputSystem;
 
 public class AttackScript : MonoBehaviour
 {
-    public float attackRange = 10f;
+    public float attackRange = 6f;
     public int attackDamage = 5;
     public LayerMask enemyLayer;
-    // [SerializeField] private AudioSource slash;
     private bool attacking;
     private Animator animator;
+
+    // Attack delay variables
+    public float attackDelay = 1.5f;
+    private float lastAttackTime;
 
     private void Start()
     {
@@ -21,24 +24,32 @@ public class AttackScript : MonoBehaviour
         attacking = context.action.IsPressed();
         if (attacking == true)
         {
-            print("attack");
             Attack();
-            // slash.Play();
+            animator.SetBool("IsHitting", true);
         }
-        animator.SetBool("IsHitting", attacking);
+        else
+        {
+            animator.SetBool("IsHitting", false);
+        }
     }
 
     private void Attack()
     {
-        Collider[] hitEnemies = Physics.OverlapSphere(transform.position, attackRange, enemyLayer);
+        // Check if enough time has elapsed since last attack
+        if (Time.time - lastAttackTime > attackDelay) {
+            Collider[] hitEnemies = Physics.OverlapSphere(transform.position, attackRange, enemyLayer);
 
-        foreach (Collider enemy in hitEnemies)
-        {
-            Enemy enemyScript = enemy.GetComponent<Enemy>();
-            if (enemyScript != null)
+            foreach (Collider enemy in hitEnemies)
             {
-                enemyScript.TakeDamage(attackDamage);
+                Enemy enemyScript = enemy.GetComponent<Enemy>();
+                if (enemyScript != null)
+                {
+                    enemyScript.TakeDamage(attackDamage);
+                }
             }
+
+            // Update last attack time
+            lastAttackTime = Time.time;
         }
     }
 

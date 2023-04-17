@@ -1142,7 +1142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461914065}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.000000002069495, y: 0.0000000016501585, z: -0.0000009536706}
+  m_LocalPosition: {x: -0.0000002404875, y: 0.00000023676894, z: 0.0000009535658}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1977,6 +1977,8 @@ MonoBehaviour:
   inventory: {fileID: 0}
   stickText: {fileID: 540805706}
   gemText: {fileID: 255782987}
+  playerOne: {fileID: 0}
+  playerTwo: {fileID: 0}
 --- !u!4 &656737100
 Transform:
   m_ObjectHideFlags: 0
@@ -2952,7 +2954,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 3.418804
+  orthographic size: 4.0795913
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2976,7 +2978,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235289533}
   m_LocalRotation: {x: -0.0008651601, y: 0.0010850116, z: 0.0000009387097, w: 0.99999905}
-  m_LocalPosition: {x: 3.771885, y: 0.25258148, z: -11.991224}
+  m_LocalPosition: {x: 3.7718847, y: 0.25258172, z: -11.991223}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4055,6 +4057,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.93
       objectReference: {fileID: 0}
+    - target: {fileID: 2831677426133875544, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c6ef80e29d4142346b0af74a2a2e8c9d, type: 2}
+    - target: {fileID: 2831677426133875544, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9da2bd264af344c4db645c6a5203afa3, type: 2}
+    - target: {fileID: 2831677426133875544, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: e0402b2fc106f594cacf44adf0f99b76, type: 2}
+    - target: {fileID: 2831677426133875544, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
+      propertyPath: m_Materials.Array.data[8]
+      value: 
+      objectReference: {fileID: 2100000, guid: f8773f2418df1b749b584c37bd615933, type: 2}
+    - target: {fileID: 2831677426133875544, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
+      propertyPath: m_Materials.Array.data[9]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8258289084980b64488f04aeccfeb106, type: 2}
     - target: {fileID: 5073929591293019070, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
       propertyPath: m_RootOrder
       value: 6
