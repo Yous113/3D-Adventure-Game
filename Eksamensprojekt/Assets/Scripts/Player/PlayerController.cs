@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    
+
     [Header("MovementVariables")]
     [SerializeField]
     public float playerSpeed = 2.0f;
@@ -21,12 +21,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Interaction interactionScript;
     private bool climbing;
 
-    
+
     private bool groundedPlayer;
     private bool jumped = false;
 
     private Animator animator;
-    
+
 
     private void Start()
     {
@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
         controller = gameObject.GetComponent<CharacterController>();
         interactionScript = gameObject.GetComponent<Interaction>();
     }
-
     public void OnMove(InputAction.CallbackContext context) {
         movementInput = context.ReadValue<Vector2>();
     }
@@ -56,6 +55,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        
 
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)

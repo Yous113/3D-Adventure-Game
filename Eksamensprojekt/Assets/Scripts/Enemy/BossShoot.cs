@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossShoot : MonoBehaviour
 {
+    [Header("AttackVariables")]
     public GameObject projectilePrefab;
     public float attackInterval = 2f;
     public float projectileSpeed = 30f;
@@ -11,11 +12,16 @@ public class BossShoot : MonoBehaviour
     public float projectileMass = 1f;
     public float projectileDrag = 0.1f;
 
+
+    [Header("Colliders")]
+    [SerializeField] Collider collider1;
+    [SerializeField] Collider collider2;
     private float attackTimer;
 
     private void Start()
     {
         attackTimer = attackInterval;
+        collider1 = GetComponent<Collider>();
     }
 
     private void Update()
@@ -40,6 +46,8 @@ public class BossShoot : MonoBehaviour
         Vector3 directionToPlayer = player.transform.position - spawnPosition.position;
 
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition.position, Quaternion.identity);
+        collider2 = projectile.GetComponent<Collider>();
+        Physics.IgnoreCollision(collider1, collider2, true);
 
         projectile.transform.rotation = Quaternion.LookRotation(directionToPlayer);
 

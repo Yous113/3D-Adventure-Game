@@ -27,6 +27,5 @@ public class HealthBarScript : MonoBehaviour
         currentHealth = Player.health;
         healthBar.fillAmount = currentHealth / maxHealth;
     }
-
     
 }
