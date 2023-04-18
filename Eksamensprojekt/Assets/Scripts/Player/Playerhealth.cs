@@ -3,9 +3,12 @@ using TMPro;
 
 public class Playerhealth : MonoBehaviour
 {
+    
+    [Header("Health")]
     public float health;
 
     // Healing
+    [Header("Healing")]
     private int gemsneeded = 2;
     [SerializeField] private TMP_Text gemsneededText;
     [SerializeField] Inventory inventory;

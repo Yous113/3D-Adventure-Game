@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -263, y: 78.19999}
+  m_AnchoredPosition: {x: -262.99988, y: 78.19999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &13229166
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  Player: {fileID: 243011197}
+  Player: {fileID: 740344648}
 --- !u!114 &199895596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -921,10 +921,6 @@ PrefabInstance:
       propertyPath: gemsneededText
       value: 
       objectReference: {fileID: 1086195564}
-    - target: {fileID: 4910988622651813650, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
-      propertyPath: jumpHeight
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5411822794462250589, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
       propertyPath: shopUI
       value: 
@@ -933,14 +929,30 @@ PrefabInstance:
       propertyPath: interactUI
       value: 
       objectReference: {fileID: 179705546}
+    - target: {fileID: 5481848463217445709, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 656737099}
     - target: {fileID: 6657139443855463525, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
       propertyPath: m_Name
       value: Players 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7160722095487070409, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
-      propertyPath: jumpHeight
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 7188893307490350587, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
+      propertyPath: shopUI
+      value: 
+      objectReference: {fileID: 656737099}
+    - target: {fileID: 7188893307490350587, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
+      propertyPath: gemsneededText
+      value: 
+      objectReference: {fileID: 1023970523}
+    - target: {fileID: 7188893307490350587, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
+      propertyPath: sticksneededText
+      value: 
+      objectReference: {fileID: 1363486174}
+    - target: {fileID: 7894824023958168476, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 656737099}
     - target: {fileID: 7935976699875683678, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
       propertyPath: UI
       value: 
@@ -2191,7 +2203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461914065}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7105054e-20, y: -0.00000023841822, z: -4.1254056e-10}
+  m_LocalPosition: {x: 2.7105054e-20, y: 0.00000023841822, z: 4.1254056e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3351,6 +3363,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 776666738385090793, guid: d856e9b88b7c8994ca389bed73a0c6c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.26
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d856e9b88b7c8994ca389bed73a0c6c4, type: 3}
 --- !u!1001 &602588365
@@ -3690,11 +3706,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3e219cb2a2aed4683d40ad26d4f598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 243011192}
   stickText: {fileID: 540805706}
   gemText: {fileID: 255782987}
-  playerOne: {fileID: 1465948024}
-  playerTwo: {fileID: 1055035389}
+  player1: {fileID: 1465948024}
+  player2: {fileID: 1055035389}
+  shopUI: {fileID: 514963879}
+  healthBar1: {fileID: 199895595}
+  healthBar2: {fileID: 2081207053}
+  inventory: {fileID: 243011192}
+  playerOne: {fileID: 1631732173}
+  playerTwo: {fileID: 897191127}
+  opened: 0
 --- !u!4 &656737100
 Transform:
   m_ObjectHideFlags: 0
@@ -4718,6 +4740,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 776666738043126700, guid: d856e9b88b7c8994ca389bed73a0c6c4, type: 3}
   m_PrefabInstance: {fileID: 588771337}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &897191127 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7160722095487070409, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
+  m_PrefabInstance: {fileID: 243011191}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7012c3ee70f6945898d00afe26d31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &917277860
 GameObject:
   m_ObjectHideFlags: 0
@@ -6620,7 +6653,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235289533}
   m_LocalRotation: {x: -0.0008651601, y: 0.0010850116, z: 0.0000009387097, w: 0.99999905}
-  m_LocalPosition: {x: 18.171892, y: 2.912587, z: -11.98819}
+  m_LocalPosition: {x: 18.171892, y: 2.9125872, z: -11.98819}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8407,6 +8440,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4388467761208142990, guid: a2178d22cf2a32b479d4c01a32418020, type: 3}
   m_PrefabInstance: {fileID: 1624008343}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1631732173 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4910988622651813650, guid: 28cb05fb131ca33409744542558b1e8e, type: 3}
+  m_PrefabInstance: {fileID: 243011191}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7012c3ee70f6945898d00afe26d31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1645379421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9140,6 +9184,10 @@ PrefabInstance:
     - target: {fileID: 776666738043126701, guid: d856e9b88b7c8994ca389bed73a0c6c4, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 776666738385090793, guid: d856e9b88b7c8994ca389bed73a0c6c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d856e9b88b7c8994ca389bed73a0c6c4, type: 3}
@@ -10720,7 +10768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8892201436198370508, guid: 7b7521f8fdbc36e4a8e1d48c21946449, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.9424137
+      value: 2.26
       objectReference: {fileID: 0}
     - target: {fileID: 8892201436198370508, guid: 7b7521f8fdbc36e4a8e1d48c21946449, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10807,6 +10855,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 776666738601818916, guid: d856e9b88b7c8994ca389bed73a0c6c4, type: 3}
+      propertyPath: loot.Array.data[0]
+      value: 
+      objectReference: {fileID: 4011907381425403444, guid: a2178d22cf2a32b479d4c01a32418020, type: 3}
+    - target: {fileID: 776666738601818916, guid: d856e9b88b7c8994ca389bed73a0c6c4, type: 3}
+      propertyPath: loot.Array.data[1]
+      value: 
+      objectReference: {fileID: 5479449647995103932, guid: 0a02a4123a1a44f4dbf7080b955758bf, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d856e9b88b7c8994ca389bed73a0c6c4, type: 3}
 --- !u!1001 &5032602066221887867

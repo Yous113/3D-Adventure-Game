@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class HealthBarScript : MonoBehaviour
 {
+    [Header("UI")]
     private Image healthBar;
+
+    [Header("Health")]
     public float currentHealth;
     private float maxHealth = 20f;
     [SerializeField] private Playerhealth Player;
