@@ -2,18 +2,22 @@ using UnityEngine;
 
 public class Patrolling : MonoBehaviour
 {
+    [Header("Patrol")]
     public Transform point1;
     public Transform point2;
+    private Transform player;
+    private Transform currentPoint;
+    private bool isChasing;
+    private Vector3 originalPosition;
+
+    [Header("AttackVariable")]
     public float speed;
     public float detectionRange;
     public float returnRange;
     public string playerTag = "Player";
     public int damage = 1;
 
-    private bool isChasing;
-    private Transform player;
-    private Transform currentPoint;
-    private Vector3 originalPosition;
+    
 
     void Start()
     {

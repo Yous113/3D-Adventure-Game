@@ -7,16 +7,23 @@ using UnityEngine.UI;
 
 public class Interaction : MonoBehaviour
 {
-    [SerializeField] private GameObject shopUI;
-    [SerializeField] private Inventory inventory;
-    [SerializeField] private GameObject interactUI;
-    [SerializeField] private PlayerController playerOne;
-    [SerializeField] private PlayerController PlayerTwo;
-    [SerializeField]private BoxCollider boxCollider;
-    bool interacted = false;
-    bool opened = false;
+    
+    
+    [Header("Ladder")]
     public bool onLadder = false;
     public bool atLadder = false;
+    [SerializeField] private BoxCollider boxCollider;
+    
+    [Header("MainUI")]
+    [SerializeField] private Inventory inventory;
+    [SerializeField] private GameObject interactUI;
+
+    [Header("ShopUI")]
+    [SerializeField] private GameObject shopUI;
+    [SerializeField] private PlayerController playerOne;
+    [SerializeField] private PlayerController PlayerTwo;
+
+    bool interacted = false;
 
     void Start()
     {   
@@ -28,20 +35,6 @@ public class Interaction : MonoBehaviour
     public void OnInteract(InputAction.CallbackContext context)
     {
         interacted = context.action.IsPressed();
-        print("True");
-    }
-
-    public void OnCloseTap(InputAction.CallbackContext context)
-    {
-        if (opened == true) 
-        {
-            shopUI.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            opened = false;
-            playerOne.enabled = true;
-            PlayerTwo.enabled = true;
-        }
     }
 
     private void OnTriggerStay(Collider other) {
@@ -122,14 +115,13 @@ public class Interaction : MonoBehaviour
 
     void Shop()
     {
-        if (!opened)
+        if (!shopUI.activeSelf)
         {
             playerOne.enabled = false;
             PlayerTwo.enabled = false;
             shopUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            opened = true;
             interactUI.SetActive(false);
         }
     }

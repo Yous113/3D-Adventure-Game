@@ -4,23 +4,24 @@ using TMPro;
 
 public class AttackScript : MonoBehaviour
 {
+    [Header("AttackVariables")]
     public float attackRange = 6f;
     public int attackDamage = 5;
+    public float attackDelay = 1.5f;
+    private float lastAttackTime;
     public LayerMask enemyLayer;
     private bool attacking;
+
     private Animator animator;
     
-    // Upgrade
+    [Header("Upgrade/Crafting")]
     private int sticksneeded;
     private int gemsneeded;
     [SerializeField] private TMP_Text sticksneededText;
     [SerializeField] private TMP_Text gemsneededText;
     [SerializeField] Inventory inventory;
     [SerializeField] ShopManagerScript shopUI;
-
-    // Attack delay variables
-    public float attackDelay = 1.5f;
-    private float lastAttackTime;
+    
 
 
     private void Start()

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -11,6 +10,8 @@ public class MainUI : MonoBehaviour
     {
         inventoryText.enabled = false;
     }
+
+
 
     public void UpdateInventory(string itemText, int amount) {
         inventoryText.text = itemText + ' ' + amount + 'x';

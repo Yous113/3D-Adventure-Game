@@ -5,25 +5,28 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    
+    [Header("MovementVariables")]
     [SerializeField]
     public float playerSpeed = 2.0f;
     [SerializeField]
     private float jumpHeight = 1.0f;
     [SerializeField]
-    private float gravityValue = -9.82f; 
-
-    private Animator animator;
-
+    private float gravityValue = -9.82f;
+    private Vector2 movementInput = Vector2.zero;
     private CharacterController controller;
     private Vector3 playerVelocity;
-    private bool groundedPlayer;
-    
-    private Vector2 movementInput = Vector2.zero;
-    private bool jumped = false;
-    
-    //ladder
+
+    [Header("Ladder")]
     [SerializeField] private Interaction interactionScript;
     private bool climbing;
+
+    
+    private bool groundedPlayer;
+    private bool jumped = false;
+
+    private Animator animator;
+    
 
     private void Start()
     {
@@ -100,7 +103,7 @@ public class PlayerController : MonoBehaviour
         gameObject.transform.eulerAngles = new Vector3(0, -90, 0);
         if (climbing == true)
         {
-            playerVelocity.y += 0.04f * Time.deltaTime;
+            playerVelocity.y += 1.5f * Time.deltaTime;
         }
     }
 }
