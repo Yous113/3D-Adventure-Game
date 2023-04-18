@@ -78,6 +78,7 @@ public class Interaction : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        print(other.gameObject.tag);
         if (other.gameObject.tag == "Shop" || other.gameObject.tag == "Boss1")
         {
             print("interact");

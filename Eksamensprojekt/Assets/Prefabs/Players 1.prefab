@@ -1574,6 +1574,7 @@ GameObject:
   - component: {fileID: 1291343657664766391}
   - component: {fileID: 3011232720305289443}
   - component: {fileID: 4233904926608234159}
+  - component: {fileID: 882991860}
   m_Layer: 0
   m_Name: PlayerOne
   m_TagString: Player
@@ -1630,6 +1631,7 @@ MonoBehaviour:
   playerSpeed: 4
   jumpHeight: 3
   gravityValue: -9.82
+  interactionScript: {fileID: 0}
 --- !u!114 &8921075465422876162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,6 +1649,10 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  sticksneededText: {fileID: 0}
+  gemsneededText: {fileID: 0}
+  inventory: {fileID: 7935976699875683678}
+  shopUI: {fileID: 0}
   attackDelay: 1.5
 --- !u!114 &5481848463217445709
 MonoBehaviour:
@@ -1757,6 +1763,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2076dc8a-76f7-4e4d-91dc-b48aa691c1cd
     m_ActionName: Player/CloseTap[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4910988622651813650}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnClimbing
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 82b34634-1cd2-4864-a46a-67738dc5bc40
+    m_ActionName: Player/Climbing[/Keyboard/w,/DualSenseGamepadHID/leftStick/up]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
@@ -1779,6 +1801,9 @@ MonoBehaviour:
   interactUI: {fileID: 0}
   playerOne: {fileID: 4910988622651813650}
   PlayerTwo: {fileID: 7160722095487070409}
+  boxCollider: {fileID: 882991860}
+  onLadder: 0
+  atLadder: 0
 --- !u!114 &3011232720305289443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1792,6 +1817,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  gemsneededText: {fileID: 0}
+  inventory: {fileID: 7935976699875683678}
+  shopUI: {fileID: 0}
 --- !u!95 &4233904926608234159
 Animator:
   serializedVersion: 5
@@ -1813,6 +1841,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &882991860
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777013900783018557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6793938, y: 2.912369, z: 5.257962}
+  m_Center: {x: 3.1076007, y: 1.962695, z: -2.8587008}
 --- !u!1 &5819792327861697989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,6 +1997,7 @@ GameObject:
   - component: {fileID: 5411822794462250589}
   - component: {fileID: 9138318623650294746}
   - component: {fileID: 1280880444202147761}
+  - component: {fileID: 305963692}
   m_Layer: 0
   m_Name: PlayerTwo
   m_TagString: Player
@@ -2012,6 +2054,7 @@ MonoBehaviour:
   playerSpeed: 4
   jumpHeight: 3
   gravityValue: -9.82
+  interactionScript: {fileID: 0}
 --- !u!114 &7188893307490350587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2135,6 +2178,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2076dc8a-76f7-4e4d-91dc-b48aa691c1cd
     m_ActionName: Player/CloseTap[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 82b34634-1cd2-4864-a46a-67738dc5bc40
+    m_ActionName: Player/Climbing[/Keyboard/w,/DualSenseGamepadHID/leftStick/up]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Controller
   m_DefaultActionMap: Player
@@ -2157,6 +2204,9 @@ MonoBehaviour:
   interactUI: {fileID: 0}
   playerOne: {fileID: 4910988622651813650}
   PlayerTwo: {fileID: 7160722095487070409}
+  boxCollider: {fileID: 305963692}
+  onLadder: 0
+  atLadder: 0
 --- !u!114 &9138318623650294746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2170,6 +2220,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  gemsneededText: {fileID: 0}
+  inventory: {fileID: 7935976699875683678}
+  shopUI: {fileID: 0}
 --- !u!95 &1280880444202147761
 Animator:
   serializedVersion: 5
@@ -2191,6 +2244,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &305963692
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164786182365518362}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7297201, y: 3.4156246, z: 5.6299467}
+  m_Center: {x: -0.36486006, y: -1.2078123, z: -0.7548827}
 --- !u!1 &6481177099310415404
 GameObject:
   m_ObjectHideFlags: 0
