@@ -37,11 +37,11 @@ public class Playerhealth : MonoBehaviour
     PlayerPrefs.SetFloat("PlayerHealth", health);
   }
 
-
   void Die()
   {
       Destroy(gameObject);
   }
+  
   public void HealthPotion()
   {
       if (inventory.gems > gemsneeded)

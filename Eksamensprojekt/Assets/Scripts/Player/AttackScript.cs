@@ -49,7 +49,6 @@ public class AttackScript : MonoBehaviour
 
     private void Attack()
     {
-        // Check if enough time has elapsed since last attack
         if (Time.time - lastAttackTime > attackDelay) {
             Collider[] hitEnemies = Physics.OverlapSphere(transform.position, attackRange, enemyLayer);
 
@@ -61,8 +60,6 @@ public class AttackScript : MonoBehaviour
                     enemyScript.TakeDamage(attackDamage);
                 }
             }
-
-            // Update last attack time
             lastAttackTime = Time.time;
         }
     }
