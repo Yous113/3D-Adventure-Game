@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class AttackScript : MonoBehaviour
 {
@@ -8,15 +9,27 @@ public class AttackScript : MonoBehaviour
     public LayerMask enemyLayer;
     private bool attacking;
     private Animator animator;
+    
+    // Upgrade
+    private int sticksneeded;
+    private int gemsneeded;
+    [SerializeField] private TMP_Text sticksneededText;
+    [SerializeField] private TMP_Text gemsneededText;
+    [SerializeField] Inventory inventory;
+    [SerializeField] ShopManagerScript shopUI;
 
     // Attack delay variables
     public float attackDelay = 1.5f;
     private float lastAttackTime;
 
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         attackDamage = PlayerPrefs.GetInt("AttackDamage", 5);
+        sticksneeded = PlayerPrefs.GetInt("Sticksneeded", 5);
+        gemsneeded = PlayerPrefs.GetInt("Gemsneeded", 2);
+        UpdateText();
     }
 
     public void OnAttack(InputAction.CallbackContext context)
@@ -55,7 +68,25 @@ public class AttackScript : MonoBehaviour
 
     public void UpgradeSword() 
     {
-        attackDamage += 5;
-        PlayerPrefs.SetInt("AttackDamage", attackDamage);
+        if (inventory.sticks > sticksneeded & inventory.gems > gemsneeded)
+        {
+            inventory.sticks -= sticksneeded;
+            inventory.gems -= gemsneeded;
+            attackDamage += 5;
+            sticksneeded *= 2;
+            gemsneeded *= 2;
+            PlayerPrefs.SetInt("AttackDamage", attackDamage);
+            PlayerPrefs.SetInt("Sticksneeded", sticksneeded);
+            PlayerPrefs.SetInt("Sticksneeded", gemsneeded);
+            shopUI.UpdateUI();
+            UpdateText();
+        }
+        
+    }
+    private void UpdateText()
+    {
+        sticksneededText.text = sticksneeded.ToString();
+        gemsneededText.text = gemsneeded.ToString();
+
     }
 }

@@ -16,22 +16,14 @@ public class ShopManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stickText.text = "Sticks: " + inventory.sticks.ToString();
-        gemText.text = "gems :" + inventory.gems.ToString();
+        UpdateUI();
         PlayerOneShop();
     }
 
-    // Update is called once per frame
-    public void Buy(int sticks, int gems)
+    public void UpdateUI()
     {
-
-        if (inventory.sticks >= sticks || inventory.gems >= gems)
-        {
-            inventory.sticks -= gems;
-            inventory.gems -= gems;
-            stickText.text = "Sticks: " + inventory.sticks.ToString();
-            gemText.text = "gems: " + inventory.gems.ToString();
-        }
+        stickText.text = inventory.sticks.ToString();
+        gemText.text = inventory.gems.ToString();
     }
 
     public void PlayerOneShop()

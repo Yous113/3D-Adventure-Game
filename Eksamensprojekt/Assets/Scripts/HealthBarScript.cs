@@ -17,7 +17,13 @@ public class HealthBarScript : MonoBehaviour
 
     private void Update()
     {
+        UpdateHealthbar();
+    }
+    public void UpdateHealthbar()
+    {
         currentHealth = Player.health;
         healthBar.fillAmount = currentHealth / maxHealth;
     }
+
+    
 }
