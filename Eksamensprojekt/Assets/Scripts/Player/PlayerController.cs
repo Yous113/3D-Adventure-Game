@@ -20,12 +20,16 @@ public class PlayerController : MonoBehaviour
     
     private Vector2 movementInput = Vector2.zero;
     private bool jumped = false;
-    private bool ladder = false;
+    
+    //ladder
+    [SerializeField] private Interaction interactionScript;
+    private bool climbing;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         controller = gameObject.GetComponent<CharacterController>();
+        interactionScript = gameObject.GetComponent<Interaction>();
     }
 
     public void OnMove(InputAction.CallbackContext context) {
@@ -34,6 +38,16 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context) {
         jumped = context.action.triggered;
+    }
+
+    public void OnClimbing(InputAction.CallbackContext context) {
+        if(!climbing) {
+            climbing = context.action.triggered;
+        } 
+        else 
+        {
+            climbing = false;
+        }
     }
 
 
@@ -47,7 +61,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsJumping", false);
         }
 
-        Vector3 move = new Vector3(movementInput.x, 0, 0);
+        Vector3 move = new Vector3(movementInput.x, movementInput.y, 0);
         move.z = 0f;
         controller.Move(move * Time.deltaTime * playerSpeed);
 
@@ -61,14 +75,33 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsWalking", false);
         }
         
-        if (jumped && groundedPlayer && !ladder)
+        if (jumped && groundedPlayer && !interactionScript.atLadder)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
             animator.SetBool("IsJumping", true);
         }
 
-        playerVelocity.y += gravityValue * Time.deltaTime;
+        if (interactionScript.onLadder)
+        {
+            LadderBehaviour();
+        }
+
+        if (!interactionScript.onLadder)
+        {
+            new Vector3(0, 0, 0);
+            playerVelocity.y += gravityValue * Time.deltaTime;
+        }
+
         controller.Move(playerVelocity * Time.deltaTime);
+    }
+
+    private void LadderBehaviour()
+    {
+        gameObject.transform.eulerAngles = new Vector3(0, -90, 0);
+        if (climbing == true)
+        {
+            playerVelocity.y += 0.04f * Time.deltaTime;
+        }
     }
 }
 

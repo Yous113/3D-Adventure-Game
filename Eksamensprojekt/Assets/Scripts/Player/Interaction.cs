@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,9 +12,19 @@ public class Interaction : MonoBehaviour
     [SerializeField] private GameObject interactUI;
     [SerializeField] private PlayerController playerOne;
     [SerializeField] private PlayerController PlayerTwo;
+    [SerializeField]private BoxCollider boxCollider;
     bool interacted = false;
     bool opened = false;
+    public bool onLadder = false;
+    public bool atLadder = false;
 
+    void Start()
+    {   
+        if (boxCollider == null)
+        {
+            boxCollider =  gameObject.GetComponent<BoxCollider>();
+        }
+    }
     public void OnInteract(InputAction.CallbackContext context)
     {
         interacted = context.action.IsPressed();
@@ -52,6 +64,16 @@ public class Interaction : MonoBehaviour
             }
         }
         
+        if (other.gameObject.tag == "ladder")
+        {
+            interactUI.SetActive(true);
+            if (interacted) 
+            {   
+                boxCollider.enabled = false;
+                onLadder = true;
+                interactUI.SetActive(false);
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -61,6 +83,13 @@ public class Interaction : MonoBehaviour
             print("interact");
             interactUI.SetActive(true);
         }
+        if (other.gameObject.tag == "ladder")
+        {
+            boxCollider.enabled = false;
+            interactUI.SetActive(true);
+            atLadder = true;
+        }
+
         if (other.gameObject.tag == "Stick")
         {
             inventory.additem("Sticks", inventory.sticks);
@@ -80,6 +109,13 @@ public class Interaction : MonoBehaviour
         if (other.gameObject.tag == "Shop" || other.gameObject.tag == "Boss1")
         {
             interactUI.SetActive(false);
+        }
+        if (other.gameObject.tag == "ladder")
+        {
+            boxCollider.enabled = true;
+            interactUI.SetActive(false);
+            onLadder = false;
+            atLadder = false;
         }
     }
 
