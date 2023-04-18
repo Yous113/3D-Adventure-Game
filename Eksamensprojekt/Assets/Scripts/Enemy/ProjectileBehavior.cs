@@ -14,12 +14,12 @@ public class ProjectileBehavior : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Playerhealth health = collision.gameObject.GetComponent<Playerhealth>();
-            Defend defend = collision.gameObject.GetComponent<Defend>();
-            if (health != null && (defend == null || !defend.shieldactive))
+            if (health != null)
             {
                 health.TakeDamage(damage);
             }
         }
         Destroy(gameObject);
     }
+
 }
