@@ -25,19 +25,20 @@ public class Playerhealth : MonoBehaviour
   }
 
   public void TakeDamage(float amount)
-  {
-    if (GetComponent<Defend>().shieldactive)
     {
-        return;
-    }
+        Defend defend = GetComponent<Defend>();
+        if (defend != null && defend.shieldactive)
+        {
+            return;
+        }
 
-    health -= amount;
-    if (health <= 0f)
-    {
-        Die();
+        health -= amount;
+        if (health <= 0f)
+        {
+            Die();
+        }
+        PlayerPrefs.SetFloat("PlayerHealth", health);
     }
-    PlayerPrefs.SetFloat("PlayerHealth", health);
-  }
 
   void Die()
   {
