@@ -53,7 +53,7 @@ public class Interaction : MonoBehaviour
             interactUI.SetActive(true);
             if (interacted)
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
             }
         }
         
@@ -86,14 +86,16 @@ public class Interaction : MonoBehaviour
 
         if (other.gameObject.tag == "Stick")
         {
-            inventory.additem("Sticks", inventory.sticks);
+            inventory.additem("Sticks", 1);
+            inventory.sticks++;
             Destroy(other.gameObject);
 
         }
         
         if (other.gameObject.tag == "Gem")
         {
-            inventory.additem("Gem", inventory.gems);
+            inventory.additem("Gem", 1);
+            inventory.gems++;
             Destroy(other.gameObject);
         } 
     }

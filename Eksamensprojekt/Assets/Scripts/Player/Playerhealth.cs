@@ -18,6 +18,7 @@ public class Playerhealth : MonoBehaviour
 
   void Start()
   {
+      PlayerPrefs.DeleteAll();
       health = PlayerPrefs.GetFloat("Playerhealth", 20f);
       gemsneededText.text = gemsneeded.ToString();
   }

@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public int sticks;
+    public int sticks = 0;
     public int gems = 0;
     [SerializeField] private MainUI UI;
 
     void Start()
     {
+        PlayerPrefs.DeleteAll();
         sticks = PlayerPrefs.GetInt("SticksCount", 0);
         gems = PlayerPrefs.GetInt("GemsCount", 0);
 
@@ -15,18 +16,10 @@ public class Inventory : MonoBehaviour
         UI.UpdateInventory("Gems", gems);
     }
 
-    public void additem(string itemName, int item)
+    public void additem(string itemName, int amount)
     {
-        item++;
-        UI.UpdateInventory(itemName, item);
-
-        if (itemName == "Sticks")
-        {
-            PlayerPrefs.SetInt("SticksCount", item);
-        }
-        else if (itemName == "Gems")
-        {
-            PlayerPrefs.SetInt("GemsCount", item);
-        }
+        UI.UpdateInventory(itemName, amount);
+        PlayerPrefs.SetInt("SticksCount", sticks);
+        PlayerPrefs.SetInt("GemsCount", gems);
     }
 }

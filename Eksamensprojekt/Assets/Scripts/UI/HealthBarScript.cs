@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthBarScript : MonoBehaviour
 {
     [Header("UI")]
-    private Image healthBar;
+    [SerializeField] private Image healthBar;
 
     [Header("Health")]
     public float currentHealth;
@@ -24,6 +24,7 @@ public class HealthBarScript : MonoBehaviour
     }
     public void UpdateHealthbar()
     {
+        Debug.Log(gameObject.name + " has image: " + healthBar);
         currentHealth = Player.health;
         healthBar.fillAmount = currentHealth / maxHealth;
     }

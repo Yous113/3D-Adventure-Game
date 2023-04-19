@@ -26,6 +26,7 @@ public class AttackScript : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.DeleteAll();
         animator = GetComponent<Animator>();
         attackDamage = PlayerPrefs.GetInt("AttackDamage", 5);
         sticksneeded = PlayerPrefs.GetInt("Sticksneeded", 5);

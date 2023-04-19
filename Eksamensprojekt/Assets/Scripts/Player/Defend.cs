@@ -20,10 +20,11 @@ public class Defend : MonoBehaviour
     [SerializeField] ShopManagerScript shopUI;
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        PlayerPrefs.DeleteAll();
         sticksneeded = PlayerPrefs.GetInt("Sticksneeded", 5);
         gemsneeded = PlayerPrefs.GetInt("Gemsneeded", 2);
         defendDuration = PlayerPrefs.GetFloat("DefendDuration", 1.5f);
+        animator = GetComponent<Animator>();
         UpdateText();
     }
 
