@@ -6,6 +6,7 @@ public class Playerhealth : MonoBehaviour
     
   [Header("Health")]
   public float health;
+  public bool dead = false;
 
   // Healing
   [Header("Healing")]
@@ -41,6 +42,7 @@ public class Playerhealth : MonoBehaviour
   void Die()
   {
       Destroy(gameObject);
+      dead = true;
   }
   
   public void HealthPotion()
