@@ -252,11 +252,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4133644}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3b309ad21b2e2448b5bafde116a10ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartGameButton: {fileID: 4133646}
 --- !u!1 &432474513
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +494,7 @@ GameObject:
   - component: {fileID: 796456574}
   - component: {fileID: 796456577}
   m_Layer: 5
-  m_Name: Exit GameButton
+  m_Name: ExitGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -608,11 +609,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796456572}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fd067f7740fff14cb0b822e3d3b32a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExitGameButton: {fileID: 796456574}
 --- !u!1 &935898110
 GameObject:
   m_ObjectHideFlags: 0
