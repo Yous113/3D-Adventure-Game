@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Interaction interactionScript;
     private bool climbing;
 
+    [SerializeField] private AudioSource jump;
+    [SerializeField] private AudioSource walk;
+    
 
     private bool groundedPlayer;
     private bool jumped = false;
@@ -72,16 +75,19 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("IsWalking", true);
             gameObject.transform.eulerAngles = new Vector3(0, movementInput.x > 0 ? 0 : 180, 0);
+            walk.Play();
         }
         else
         {
             animator.SetBool("IsWalking", false);
+            walk.Stop();
         }
         
         if (jumped && groundedPlayer && !interactionScript.atLadder)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
             animator.SetBool("IsJumping", true);
+            jump.PlayOneShot(jump.clip);
         }
 
         if (interactionScript.onLadder)

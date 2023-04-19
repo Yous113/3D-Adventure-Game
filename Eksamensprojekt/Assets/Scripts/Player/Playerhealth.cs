@@ -15,6 +15,8 @@ public class Playerhealth : MonoBehaviour
   [SerializeField] Inventory inventory;
   [SerializeField] ShopManagerScript shopUI;
 
+  [SerializeField] private AudioSource shieldblock;
+
 
 
   void Start()
@@ -29,6 +31,7 @@ public class Playerhealth : MonoBehaviour
         Defend defend = GetComponent<Defend>();
         if (defend != null && defend.shieldactive)
         {
+            shieldblock.Play();
             return;
         }
 

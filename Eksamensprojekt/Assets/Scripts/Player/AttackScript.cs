@@ -22,6 +22,9 @@ public class AttackScript : MonoBehaviour
     [SerializeField] Inventory inventory;
     [SerializeField] ShopManagerScript shopUI;
     
+    [SerializeField] private AudioSource nothit;
+    [SerializeField] private AudioSource hit;
+
 
 
     private void Start()
@@ -53,18 +56,31 @@ public class AttackScript : MonoBehaviour
         if (Time.time - lastAttackTime > attackDelay) {
             Collider[] hitEnemies = Physics.OverlapSphere(transform.position, attackRange, enemyLayer);
 
+            bool enemyHit = false;
+
             foreach (Collider enemy in hitEnemies)
             {
                 Enemy enemyScript = enemy.GetComponent<Enemy>();
                 if (enemyScript != null)
                 {
                     enemyScript.TakeDamage(attackDamage);
+                    enemyHit = true;
                 }
             }
+
+            if (enemyHit)
+            {
+                hit.Play();
+            }
+            else
+            {
+                nothit.Play();
+            }
+
             lastAttackTime = Time.time;
         }
     }
-
+    
     public void UpgradeSword() 
     {
         if (inventory.sticks > sticksneeded & inventory.gems > gemsneeded)
