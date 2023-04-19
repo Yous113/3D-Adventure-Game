@@ -37,8 +37,13 @@ public class PlayerController : MonoBehaviour
         controller = gameObject.GetComponent<CharacterController>();
         interactionScript = gameObject.GetComponent<Interaction>();
     }
+
     public void OnMove(InputAction.CallbackContext context) {
         movementInput = context.ReadValue<Vector2>();
+
+        if (movementInput == Vector2.zero) {
+            walk.Stop();
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context) {
@@ -75,7 +80,10 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("IsWalking", true);
             gameObject.transform.eulerAngles = new Vector3(0, movementInput.x > 0 ? 0 : 180, 0);
-            walk.Play();
+
+            if (!walk.isPlaying && groundedPlayer) {
+                walk.Play();
+            }
         }
         else
         {
@@ -113,4 +121,3 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
-
