@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Interaction : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class Interaction : MonoBehaviour
     [SerializeField] private GameObject shopUI;
     [SerializeField] private PlayerController playerOne;
     [SerializeField] private PlayerController PlayerTwo;
+
+    [Header("Inventory")]
+    public TMP_Text inventoryText;
 
     bool interacted = false;
 
@@ -86,7 +90,8 @@ public class Interaction : MonoBehaviour
 
         if (other.gameObject.tag == "Stick")
         {
-            inventory.additem("Sticks", 1);
+            inventoryText.text = "Sticks 1x";
+            WaitBeforeClosing();
             inventory.sticks++;
             Destroy(other.gameObject);
 
@@ -94,7 +99,7 @@ public class Interaction : MonoBehaviour
         
         if (other.gameObject.tag == "Gem")
         {
-            inventory.additem("Gem", 1);
+            inventoryText.text = "Gem 1x";
             inventory.gems++;
             Destroy(other.gameObject);
         } 
@@ -126,5 +131,12 @@ public class Interaction : MonoBehaviour
             Cursor.visible = true;
             interactUI.SetActive(false);
         }
+    }
+
+    private IEnumerator WaitBeforeClosing()
+    {
+        inventoryText.enabled = true;
+        yield return new WaitForSeconds(1);
+        inventoryText.enabled = false;
     }
 }

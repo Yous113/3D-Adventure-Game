@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 [RequireComponent(typeof(CharacterController))]
 
@@ -20,6 +21,8 @@ public class PlayerController : MonoBehaviour
     [Header("Ladder")]
     [SerializeField] private Interaction interactionScript;
     private bool climbing;
+
+    
 
     [SerializeField] private AudioSource jump;
     [SerializeField] private AudioSource walk;
@@ -63,8 +66,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
-
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
@@ -120,4 +121,6 @@ public class PlayerController : MonoBehaviour
             playerVelocity.y += 1.5f * Time.deltaTime;
         }
     }
+    
+
 }
