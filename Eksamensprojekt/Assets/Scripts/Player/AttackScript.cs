@@ -104,4 +104,21 @@ public class AttackScript : MonoBehaviour
         gemsneededText.text = gemsneeded.ToString();
 
     }
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw a sphere in the scene view
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+
+        // Find all colliders within the sphere
+        Collider[] hitEnemies = Physics.OverlapSphere(transform.position, attackRange, enemyLayer);
+
+        // Draw a box around each enemy in the scene view
+        Gizmos.color = Color.green;
+        foreach (Collider enemy in hitEnemies)
+        {
+            Gizmos.DrawWireCube(enemy.transform.position, enemy.bounds.size);
+        }
+    }
 }

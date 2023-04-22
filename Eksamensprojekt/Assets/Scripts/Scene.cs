@@ -16,7 +16,7 @@ public class Scene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player1.dead == true && player2.dead == true) 
+        if (player1.dead == true || player2.dead == true) 
         {
             SceneManager.LoadScene("Defeat");
         }
