@@ -1137,7 +1137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4760470141246242206}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.59, y: 0.57, z: 0}
+  m_LocalPosition: {x: -3.69, y: -1.34, z: 1.87}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1594,7 +1594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5777013900783018557}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.1, y: -3.43, z: 1.76}
+  m_LocalPosition: {x: -3.45, y: -1.51, z: 0.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1619,7 +1619,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 3, y: 2, z: -2}
+  m_Center: {x: -1.2, y: 0.3, z: 0}
 --- !u!114 &4910988622651813650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1650,7 +1650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bbd08852f9aed64eb4b7162160e24fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 5.02
+  attackRange: 1.5
   attackDamage: 5
   attackDelay: 1
   enemyLayer:
@@ -1880,7 +1880,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.6793938, y: 2.912369, z: 5.257962}
-  m_Center: {x: 3.1076007, y: 1.962695, z: -2.8587008}
+  m_Center: {x: -1.2, y: 0, z: 0}
 --- !u!82 &1518068493
 AudioSource:
   m_ObjectHideFlags: 0
