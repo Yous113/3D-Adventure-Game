@@ -1,9 +1,7 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
 
 public class Interaction : MonoBehaviour
@@ -35,6 +33,7 @@ public class Interaction : MonoBehaviour
         {
             boxCollider =  gameObject.GetComponent<BoxCollider>();
         }
+        inventoryText.enabled = false;
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
@@ -91,7 +90,7 @@ public class Interaction : MonoBehaviour
         if (other.gameObject.tag == "Stick")
         {
             inventoryText.text = "Sticks 1x";
-            WaitBeforeClosing();
+            StartCoroutine(WaitBeforeClosing());
             inventory.sticks++;
             Destroy(other.gameObject);
 
@@ -101,6 +100,7 @@ public class Interaction : MonoBehaviour
         {
             inventoryText.text = "Gem 1x";
             inventory.gems++;
+            StartCoroutine(WaitBeforeClosing());
             Destroy(other.gameObject);
         } 
     }
@@ -135,6 +135,7 @@ public class Interaction : MonoBehaviour
 
     private IEnumerator WaitBeforeClosing()
     {
+        print("inv");
         inventoryText.enabled = true;
         yield return new WaitForSeconds(1);
         inventoryText.enabled = false;

@@ -1650,7 +1650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bbd08852f9aed64eb4b7162160e24fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 10
+  attackRange: 5.02
   attackDamage: 5
   attackDelay: 1
   enemyLayer:
@@ -1828,6 +1828,7 @@ MonoBehaviour:
   shopUI: {fileID: 0}
   playerOne: {fileID: 4910988622651813650}
   PlayerTwo: {fileID: 7160722095487070409}
+  inventoryText: {fileID: 0}
 --- !u!114 &3011232720305289443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2643,6 +2644,7 @@ MonoBehaviour:
   shopUI: {fileID: 0}
   playerOne: {fileID: 4910988622651813650}
   PlayerTwo: {fileID: 7160722095487070409}
+  inventoryText: {fileID: 0}
 --- !u!114 &9138318623650294746
 MonoBehaviour:
   m_ObjectHideFlags: 0

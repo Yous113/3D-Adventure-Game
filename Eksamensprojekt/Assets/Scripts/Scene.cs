@@ -19,6 +19,8 @@ public class Scene : MonoBehaviour
         if (player1.dead == true || player2.dead == true) 
         {
             SceneManager.LoadScene("Defeat");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
     }
