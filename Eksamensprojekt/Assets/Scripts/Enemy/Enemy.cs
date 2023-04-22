@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -20,6 +19,5 @@ public class Enemy : MonoBehaviour
    {
         Destroy(gameObject);
         Instantiate(loot[Random.Range(0,2)], transform.position, Quaternion.identity);
-
    }
 }

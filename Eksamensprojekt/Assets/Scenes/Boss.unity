@@ -221,6 +221,18 @@ MonoBehaviour:
   chaseDuration: 10
   shootDuration: 5
   idleDuration: 5
+--- !u!114 &209307519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209307500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa217e62ee5555459e6454d333279af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &259180224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -654,6 +666,10 @@ PrefabInstance:
     - target: {fileID: 4215028962023794145, guid: f7ee55fd3300e1a4bb91b025faf0d4ea, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215028962023794145, guid: f7ee55fd3300e1a4bb91b025faf0d4ea, type: 3}
+      propertyPath: m_TagString
+      value: Boss1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7ee55fd3300e1a4bb91b025faf0d4ea, type: 3}
