@@ -6,17 +6,18 @@ public class BossShoot : MonoBehaviour
 {
     [Header("AttackVariables")]
     public GameObject projectilePrefab;
-    public float attackInterval = 2f;
+    public float attackInterval = 0.5f;
     public float projectileSpeed = 30f;
     public int projectileDamage = 5;
     public float projectileMass = 1f;
-    public float projectileDrag = 0.1f;
+    public float projectileDrag = 0f;
 
 
     [Header("Colliders")]
     [SerializeField] Collider collider1;
     [SerializeField] Collider collider2;
     private float attackTimer;
+    private bool isShooting;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class BossShoot : MonoBehaviour
 
     private void Update()
     {
+        isShooting = GetComponent<BossController>().isShooting;
         if (attackInterval != float.MaxValue)
         {
             attackTimer -= Time.deltaTime;
@@ -40,6 +42,10 @@ public class BossShoot : MonoBehaviour
 
     private void LaunchProjectile()
     {
+        if (!isShooting) // Check if boss is currently in the shooting state
+    {
+        return; // If not, exit the method without firing the projectile
+    }
         Transform spawnPosition = transform.Find("ProjectileSpawnPosition");
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");

@@ -50,7 +50,7 @@ public class BossSlime : MonoBehaviour
 
     public void StartMoving()
     {
-        moveSpeed = 1f;
+        moveSpeed = 2f;
     }
 
     public void StopMoving()

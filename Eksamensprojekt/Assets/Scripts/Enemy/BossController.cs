@@ -12,20 +12,17 @@ public class BossController : MonoBehaviour
     public float idleDuration = 5f;
 
     private float timer;
-    private bool isChasing;
-    private bool isShooting;
+    public bool isChasing;
+    public bool isShooting;
 
     private void Start()
     {
-
         bossSlime = GetComponent<BossSlime>();
         bossShoot = GetComponent<BossShoot>();
-
+        timer = chaseDuration;
         isChasing = true;
         isShooting = false;
-        timer = chaseDuration;
-        bossSlime.StartMoving();
-        bossShoot.StopShooting();
+
     }
 
     private void Update()
@@ -34,15 +31,21 @@ public class BossController : MonoBehaviour
 
         if (isChasing)
         {
+            if (timer > 0f)
+            {
+                isShooting = false;
+            }
+
             if (timer <= 0f)
             {
                 bossSlime.StopMoving();
                 isChasing = false;
                 isShooting = true;
                 timer = shootDuration;
-                bossShoot.StartShooting();
+                Debug.Log("Boss is now shooting.");
             }
         }
+
         else if (isShooting)
         {
             if (timer <= 0f)
@@ -50,6 +53,7 @@ public class BossController : MonoBehaviour
                 bossShoot.StopShooting();
                 isShooting = false;
                 timer = idleDuration;
+                Debug.Log("Boss is now idle.");
             }
         }
         else
@@ -59,6 +63,7 @@ public class BossController : MonoBehaviour
                 bossSlime.StartMoving();
                 isChasing = true;
                 timer = chaseDuration;
+                Debug.Log("Boss is now chasing.");
             }
         }
     }
