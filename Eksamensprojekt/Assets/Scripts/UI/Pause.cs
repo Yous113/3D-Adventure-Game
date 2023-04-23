@@ -22,6 +22,7 @@ public class Pause : MonoBehaviour
 
     public void PauseGame()
     {
+        print("Paused");
         pauseMenu.SetActive(true);
         mainUI.SetActive(false);
         Time.timeScale = 0f;
@@ -31,6 +32,7 @@ public class Pause : MonoBehaviour
 
     public void UnPauseGame() 
     {
+
         pauseMenu.SetActive(false);
         mainUI.SetActive(true);
         Time.timeScale = 1f;

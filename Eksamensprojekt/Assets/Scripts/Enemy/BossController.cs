@@ -15,6 +15,7 @@ public class BossController : MonoBehaviour
     public bool isChasing;
     public bool isShooting;
 
+
     private void Start()
     {
         bossSlime = GetComponent<BossSlime>();

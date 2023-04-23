@@ -3,18 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class Ondest : MonoBehaviour
 {
-    public GameObject slime;
+    public Enemy slime;
 
-    void OnDestroy()
+    void Update()
     {
-        if (gameObject == slime)
+        if (slime.dead == true)
         {
             SceneManager.LoadScene(4);
         }
-        else
-        {
-            SceneManager.LoadScene(3);
-        }
-        
     }
 }

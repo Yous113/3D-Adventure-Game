@@ -14,6 +14,6 @@ public class MainMenu : MonoBehaviour
 
     void TaskOnClick()
     {
-        SceneManager.LoadScene("StartScreen");
+        SceneManager.LoadScene(0);
     }
 }
